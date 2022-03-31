@@ -1,32 +1,46 @@
+<!--
+File:member.components.html
+Author: Jakab Attila
+Copyright: 2022, Jakab Attila
+Group: Szoft  II/N
+Date: 2022-03-31
+Github: https://github.com/Attila2001/Members.git
+Licenc: GNU GPL -->
+
+
 
 <form [formGroup]="memberForm" (ngSubmit)="saveMember()">
 
     <div class="mb-3">
         <label for="name" class="form-label">Név</label>
-        <input type="text" class="form-control" id="name" 
+        <input type="text" class="form-control" id="name"
         formControlName="name"
         placeholder="Vezetéknév Keresztnév">
+        <small *ngIf="memberForm.controls['name'].invalid && memberForm.controls['name'].touched">név kötelező</small>
     </div>
 
     <div class="mb-3">
         <label for="city" class="form-label">Város</label>
-        <input type="text" class="form-control" id="city" 
+        <input type="text" class="form-control" id="city"
         formControlName="city"
         placeholder="Település neve">
+        <small *ngIf="memberForm.controls['city'].invalid && memberForm.controls['city'].touched">név kötelező</small>
     </div>
 
     <div class="mb-3">
         <label for="address" class="form-label">Város</label>
-        <input type="text" class="form-control" id="address" 
+        <input type="text" class="form-control" id="address"
         formControlName="address"
         placeholder="Cím">
+        <small *ngIf="memberForm.controls['address'].invalid && memberForm.controls['address'].touched">név kötelező</small>
     </div>
 
     <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
-        <input type="text" class="form-control" id="email" 
+        <input type="text" class="form-control" id="email"
         formControlName="email"
         placeholder="E-mail cím">
+        <small *ngIf="memberForm.controls['email'].invalid && memberForm.controls['email'].touched">név kötelező</small>
     </div>
 
     <div>
